@@ -35,12 +35,21 @@ public class Lavatrice {
     
 
     public void accendi () {
-        if (stato == Stato.spenta){
-            System.out.println("La lavatrice è già spenta!");}}
+        if (stato !=Stato.spenta){ //Se la lavatrice non è spenta, allora mostro un messaggio d'errore, altrimenti l'accendo
+            System.out.println("La lavatrice è già accesa!");}
+        else{
+            stato=Stato.standby;   
+            System.out.println("Hai acceso la lavatrice!");
+        } 
+    }
 
     public void standby (){
         if (stato == Stato.standby){
-            System.out.println("La lavatrice è in standby!");}}
+            System.out.println("La lavatrice è in standby!");}
+        else {stato=Stato.standby;
+        System.out.println("Lavatrice in standby!");}
+    
+    }
 
     public void lavaggio_in_corso(){
         if (stato == Stato.lavaggio_in_corso){
